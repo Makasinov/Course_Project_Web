@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	
+    <title>Курсовая работа</title>
+	<form id='reg_form'>
+		<div style='margin-bottom: 10px'>
+			<a href='javascript:close()' style='float: right'>Закрыть</a>
+		</div>
+		<div>
+			<a>Логин</a>
+			<input id='loginEdit' type='text' class='right_gray'/>
+		</div>
+		<div>
+			<a>Пароль</a>
+			<input id='passwordEdit' type='password' class='right_gray'/>
+		</div>
+		<div>
+			<button onClick='login()' class='custom width100 transition' type="submit"><a>Войти</a></button>
+		</div>
+		<div>
+			<a>Впервые?</a>
+			<button onClick='register()' class='custom width180'><a>Зарегистрироваться</a></button>
+		</div>
+    </form>
+	
+	<table style='width: 100%'>
+	<tb>
+		<th>
+			<a href='javascript:listOfLessons()' class='menu_item transition' style='float: left'>СПИСОК УРОКОВ</a>
+		</th>
+		<th>
+			<a href='javascript:loginButton()' class='menu_item transition' style='float: right'>ВОЙТИ</a>
+		</th>
+	</tb>
+	</table>
+
+</head>
+
+<body>
+
+    <div id='main_content'>
+        <iframe id='_iframe' src="https://code-live.ru/post/cpp-arrays/"></iframe>
+        <a id='test_a'></a>
+    </div>
+    <script>
+        var test_a = document.getElementById('test_a');
+        
+        var iframe = document.getElementById('_iframe');
+        var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
+                
+        //test_a.innerHTML = innerDoc;
+        
+        var doc_height = window.innerHeight - 70;
+        document.getElementById("main_content").style.height = doc_height + 'px';
+    </script>
+        
+<!--
+    <table style='width: 100%; margin-top: 150px'>
+	<tb>
+		<th>
+			<a style='float: right'>Время: </a>
+		</th>
+	</tb>
+	</table>
+-->
+    
+</body>
+
+<link rel='stylesheet' href='css/main.css'>
+<script src='js/main.js'></script>
+
+</html>
