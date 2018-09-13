@@ -25,48 +25,178 @@
 			<button onClick='register()' class='custom width180'><a>Зарегистрироваться</a></button>
 		</div>
     </form>
-	
+	    
 	<table style='width: 100%'>
 	<tb>
 		<th>
-			<a href='javascript:listOfLessons()' class='menu_item transition' style='float: left'>СПИСОК УРОКОВ</a>
+			<a href='javascript:listOfLessons()' class='menu_item' style='float: left'>СПИСОК УРОКОВ</a>
 		</th>
 		<th>
-			<a href='javascript:loginButton()' class='menu_item transition' style='float: right'>ВОЙТИ</a>
+			<a href='javascript:loginButton()' class='menu_item' style='float: right'>ВОЙТИ</a>
 		</th>
 	</tb>
 	</table>
+    <div id='list_of_lessons'>
+        <table>
+        <tb>
+           <tr><td>
+               <a class="item" href='#' onclick="action_1()">Первая программа C++</a>
+               <script>
+                   function action_1() {
+                       iframe.src = 'https://code-live.ru/post/cpp-hello-world/';
+                       close();
+                   }
+               </script>
+            </td></tr>        
+            <tr><td>
+                <a class="item" href='#' onclick="action_2()">Переменные и типы данных</a>
+                <script>
+                   function action_2() {
+                       iframe.src = 'https://code-live.ru/post/cpp-variables-and-datatypes/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_3()">Конструкция ветвления</a>
+                <script>
+                   function action_3() {
+                       iframe.src = 'https://code-live.ru/post/cpp-if-else/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_4()">Циклы</a>
+                <script>
+                   function action_4() {
+                       iframe.src = 'https://code-live.ru/post/cpp-loops/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_5()">Массивы</a>
+                <script>
+                   function action_5() {
+                       iframe.src = 'https://code-live.ru/post/cpp-arrays/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_6()">Функции</a>
+                <script>
+                   function action_6() {
+                       iframe.src = 'https://code-live.ru/post/cpp-functions/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_7()">Указатели</a>
+                <script>
+                   function action_7() {
+                       iframe.src = 'https://code-live.ru/post/cpp-pointers/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_8()">Динамические массивы</a>
+                <script>
+                   function action_8() {
+                       iframe.src = 'https://code-live.ru/post/cpp-dynamic-arrays/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_9()">Параметры командной строки</a>
+                <script>
+                   function action_9() {
+                       iframe.src = 'https://code-live.ru/post/cpp-command-line-arguments/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_10()">Классы - 1 часть</a>
+                <script>
+                   function action_10() {
+                       iframe.src = 'https://code-live.ru/post/cpp-classes/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_11()">Классы - 2 часть</a>
+                <script>
+                   function action_11() {
+                       iframe.src = 'https://code-live.ru/post/cpp-continue-learning-classes/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_12()">Векторы</a>
+                <script>
+                   function action_12() {
+                       iframe.src = 'https://code-live.ru/post/cpp-vector/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_13()">Наследование классов</a>
+            <script>
+                   function action_13() {
+                       iframe.src = 'https://code-live.ru/post/cpp-class-inheritance/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_14()">Перегрузка функций</a>
+            <script>
+                   function action_14() {
+                       iframe.src = 'https://code-live.ru/post/cpp-function-overload/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_15()">Перегрузка методов</a>
+            <script>
+                   function action_15() {
+                       iframe.src = 'https://code-live.ru/post/cpp-overloading-class-methods/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+            <tr><td>
+                <a class="item" href='#' onclick="action_16()">Определение и перегрузка операторов</a>
+            <script>
+                   function action_16() {
+                       iframe.src = 'https://code-live.ru/post/cpp-operators/';
+                       close();
+                   }
+               </script>
+            </td></tr>
+        </tb>
+        </table>
+    </div>
 
 </head>
 
 <body>
 
     <div id='main_content'>
-        <iframe id='_iframe' src="https://code-live.ru/post/cpp-arrays/"></iframe>
+        <a id='choose_a'>Выберите тему из списка уроков</a>
+        <iframe id='_iframe' src=""></iframe>
         <a id='test_a'></a>
     </div>
-    <script>
-        var test_a = document.getElementById('test_a');
-        
-        var iframe = document.getElementById('_iframe');
-        var innerDoc = (iframe.contentDocument) ? iframe.contentDocument : iframe.contentWindow.document;
-                
-        //test_a.innerHTML = innerDoc;
-        
-        var doc_height = window.innerHeight - 70;
-        document.getElementById("main_content").style.height = doc_height + 'px';
-    </script>
-        
-<!--
-    <table style='width: 100%; margin-top: 150px'>
-	<tb>
-		<th>
-			<a style='float: right'>Время: </a>
-		</th>
-	</tb>
-	</table>
--->
-    
+            
 </body>
 
 <link rel='stylesheet' href='css/main.css'>

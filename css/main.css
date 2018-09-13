@@ -9,6 +9,8 @@ a	{
     text-decoration: none;
     color: black;
 }
+
+
 .menu {
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -19,6 +21,7 @@ a	{
 	font-size: 25px;
     color: white;
     text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+    transition: 0.5s;
 }
 .menu_item:hover {
     color: lightblue;
@@ -72,9 +75,7 @@ button {
     transition: 0.5s;
 }
 
-.transition {
-    transition: 0.5s;
-}
+
 
 #main_content {
     border: 1px solid black;
@@ -85,4 +86,33 @@ button {
 iframe {
     width: 100%;
     height: 100%;
+}
+
+#list_of_lessons {
+    z-index: 99;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+    margin-bottom: auto;
+    left: 0;
+    right: 0;
+    content: none;
+	width: 350px;
+    background-color: white;
+	border: 1px solid gray;
+	border-radius: 5px;
+    opacity: 0.95;
+}
+
+.href {
+    
+}
+
+.item {
+    font-size: 18px;
+    transition: 0.1s;
+}
+.item:hover {
+    font-size: 20px;
 }
