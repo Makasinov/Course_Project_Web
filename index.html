@@ -3,40 +3,20 @@
 
 <head>
 	<meta charset="utf-8">
-	
-    <title>Курсовая работа</title>
-	<form id='reg_form'>
-		<div style='margin-bottom: 10px'>
-			<a href='javascript:close()' style='float: right'>Закрыть</a>
-		</div>
-		<div>
-			<a>Логин</a>
-			<input id='loginEdit' type='text' class='right_gray'/>
-		</div>
-		<div>
-			<a>Пароль</a>
-			<input id='passwordEdit' type='password' class='right_gray'/>
-		</div>
-		<div>
-			<button onClick='login()' class='custom width100 transition' type="submit"><a>Войти</a></button>
-		</div>
-		<div>
-			<a>Впервые?</a>
-			<button onClick='register()' class='custom width180'><a>Зарегистрироваться</a></button>
-		</div>
-    </form>
-	    
-	<table style='width: 100%'>
-	<tb>
-		<th>
+    <title>Курсовая работа</title>  
+
+    <table style="width: 100%">
+	<tr>
+		<th style="width: 250px">
 			<a href='javascript:listOfLessons()' class='menu_item' style='float: left'>СПИСОК УРОКОВ</a>
 		</th>
 		<th>
-<!--			<a href='javascript:loginButton()' class='menu_item' style='float: right'>ВОЙТИ</a>-->
-		</th>
-	</tb>
-	</table>
-    <div id='list_of_lessons'>
+            <a href="check.html" class="menu_item" style='float: left'>ПРОВЕРИТЬ ЗНАНИЯ</a>
+        </th>
+	</tr>
+    </table>
+
+    <div id="list_of_lessons">
         <table>
         <tb>
            <tr><td>
@@ -93,14 +73,15 @@
 
 </head>
 
+
 <body>
-        <a id='choose_a'>Выберите тему из списка уроков</a>
+    <a id='choose_a'>Выберите тему из списка уроков</a>
     <div id='main_content'>
         <iframe src=""></iframe>
     </div>
 </body>
 
-<link rel='stylesheet' href='css/main.css'>
-<script src='js/main.js'></script>
+    <link rel='stylesheet' href='css/main.css'>
+    <script src='js/main.js'></script>
 
 </html>
