@@ -10,7 +10,6 @@ a	{
     color: black;
 }
 
-
 .menu {
 	margin-top: 0px;
 	margin-bottom: 0px;
@@ -117,4 +116,54 @@ button {
 iframe {
     width: 100%;
     height: 98.5%;
+}
+
+.main {
+    margin-left: 10%;
+    margin-right: 10%;
+    height: auto;
+    outline: 1px solid gray;
+}
+
+.noclick {
+    cursor: default;
+}
+
+html {
+    min-height: 100%; 
+}
+
+body {
+    background: linear-gradient(to top, gray, white);
+}
+
+.check {
+    font-family: 'Source Code Pro', monospace;
+    width: 60px;
+    font-size: 15px;
+    margin: 1px;
+}
+
+.code {
+    background-color: lightgray;
+    color: black;
+    font-size: 17px;
+    font-family: 'Source Code Pro', monospace;
+    width: 90%;
+    outline: 1px solid gray;
+    border-left: 3px solid lightblue;
+}
+
+
+
+ol {
+    margin: 0px;
+}
+
+
+
+
+
+li {
+    white-space: pre-wrap;
 }

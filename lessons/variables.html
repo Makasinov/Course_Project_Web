@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+   <title>Практикум</title>
+    <head>
+      <meta charset="utf-8">
+       <link href="https://fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet">
+        <table style="width: 100%">
+	    <tr style="width: 100px">
+            <th style="width: 20px">
+                <a href="../index.html" class="menu_item" style='float: left'>Назад</a>
+		    </th>
+            <th style="width: 20px">
+                <a href="../lessons/input_output.html" class="menu_item" style='float: left'>ВВОД / ВЫВОД</a>
+		    </th>
+		    <th style="width: 20px">
+                <a href="../lessons/variables.html" class="menu_item" style='float: left'>ПЕРЕМЕННЫЕ</a>
+            </th>
+            <th style="width: 20px">
+                <a href="../lessons/if_else.html" class="menu_item" style='float: left'>КОНСТРУКЦИИ ВЕТВЛЕНИЯ</a>
+            </th>
+            <th style="width: 20px">
+                <a href="../lessons/additions.html" class="menu_item" style='float: left'>ДРУГИЕ</a>
+            </th>
+	    </tr>
+        </table>
+    </head>
+    <body>
+       <div class="main">
+        <h2 class="item noclick">ПЕРЕМЕННЫЕ</h2>
+          <div>
+           <h3>Основные типы данных в C++</h3>
+              <input maxlength="3" type="text" class="check"><a> — целочисленный тип данных.</a><br/>
+              <input maxlength="5" type="text" class="check"><a> — тип данных с плавающей запятой.</a><br/>
+              <input maxlength="6" type="text" class="check"><a> — тип данных с плавающей запятой двойной точности.</a><br/>
+              <input maxlength="4" type="text" class="check"><a> — символьный тип данных.</a><br/>
+              <input maxlength="4" type="text" class="check"><a> — логический тип данных.</a><br/><br/>
+            <button id="check1" onclick="check1()">Проверить</button>
+            <script>
+                function setDefault() {
+                    var inputs = document.getElementsByTagName('input');
+                    inputs[0].style.backgroundColor = 'white';
+                    inputs[1].style.backgroundColor = 'white';
+                    inputs[2].style.backgroundColor = 'white';
+                    inputs[3].style.backgroundColor = 'white';
+                    inputs[4].style.backgroundColor = 'white';
+                }
+                
+                function check1() {
+                    var xhr = new XMLHttpRequest();
+                    var inputs = document.getElementsByTagName('input');
+                    var params = inputs[0].value + 
+                                 '&' + inputs[1].value + 
+                                 '&' + inputs[2].value + 
+                                 '&' + inputs[3].value + 
+                                 '&' + inputs[4].value;
+                    xhr.open('GET', '/lessons/vote?' + params, true);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState != 4) return;
+                        if (xhr.status != 200) {
+                            document.getElementById('check1').textContent = 'Ошибка';
+                            return;
+                        }
+                        setDefault();
+                        if (xhr.responseText == 'true')
+                            document.getElementById('check1').textContent = 'Верно!';
+                        if (xhr.responseText.includes('1',0))
+                            inputs[0].style.backgroundColor = 'red';
+                        if (xhr.responseText.includes('2',0))
+                            inputs[1].style.backgroundColor = 'red';
+                        if (xhr.responseText.includes('3',0))
+                            inputs[2].style.backgroundColor = 'red';
+                        if (xhr.responseText.includes('4',0))
+                            inputs[3].style.backgroundColor = 'red';
+                        if (xhr.responseText.includes('5',0))
+                            inputs[4].style.backgroundColor = 'red';
+                    }
+                    xhr.send();
+                }
+            </script>
+           </div>
+           <div>
+           <h3>Пример объявления переменных</h3>
+               <ol class="code">
+                  <code>
+                   <li>int main() {</li>
+                   <li>    int i = 14;       // объявление переменной i целого типа.</li>
+                   <li>    float f = 13.4;   // объявление переменной f типа данных с плавающей запятой.</li>
+                   <li>    double d = 14.2;  // инициализация переменной типа double. </li>
+                   <li>    char c = 'c';     // инициализация переменной типа char. </li>
+                   <li>    bool b = true;    // инициализация логической переменной b.</li>
+                   <li>    std::cout << i << c;</li>
+                   <li>}</li>
+                  </code>
+               </ol>
+               <a>На экране будет отображено </a>
+               <input maxlength="3" type="text" class="check"> 
+               <button id="check2" onclick="check2()">Проверить</button>
+           </div>
+       </div>
+    </body>
+    <link rel='stylesheet' href='../css/main.css'>
+    <script src='js/main.js'></script>
+
+</html>
