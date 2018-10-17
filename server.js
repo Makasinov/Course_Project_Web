@@ -3,18 +3,36 @@ var url = require('url');
 var querystring = require('querystring');
 var static = require('node-static');
 var file = new static.Server('.');
-
+var paramsArray = '';
+var errorLog;
 
 function accept(req, res) {
-  if (req.url.includes('/lessons/vote',0)) {
-//      console.log(req.url);
-      if(req.url.includes('?','/lessons/vote'.length-1))
-          {
-              var paramsArray = 
-                req.url.substring('/lessons/vote'.length+1,
+	console.log(req.url);
+    
+    if (req.url.includes('/lessons/input_output',0)) {
+        if(req.url.includes('/lessons/input_output_1',0))
+            {
+                if (req.url.includes('?','/lessons/input_output_1'.length-1)) {
+                    paramsArray = 
+                        req.url.substring('/lessons/input_output_1'.length+1,
+                               req.url.length).split('&');
+                    console.log(paramsArray);
+                    errorLog = 'true';
+                    if (paramsArray[0] != 'iostream')
+                    errorLog+='1';
+                    res.end(errorLog);
+                }   
+            }
+        }
+    
+    if (req.url.includes('/lessons/request',0)) {
+      if (req.url.includes('/lessons/request_1',0))
+      if (req.url.includes('?','/lessons/request_1'.length-1)) {
+              paramsArray = 
+                req.url.substring('/lessons/request_1'.length+1,
                                req.url.length).split('&');
               console.log(paramsArray);
-              var errorLog = 'true';
+              errorLog = 'true';
               if (paramsArray[0] != 'int')
                   errorLog+='1';
               if (paramsArray[1] != 'float')
@@ -28,9 +46,22 @@ function accept(req, res) {
               console.log(errorLog);
               res.end(errorLog);
           }
-  } else {
-    file.serve(req, res); // (если он есть)
-  }
+        
+      if (req.url.includes('/lessons/request_2',0))
+      if (req.url.includes('?','/lessons/request_2'.length-1)) {
+          paramsArray = 
+                req.url.substring('/lessons/request_2'.length+1,
+                               req.url.length).split('&');
+              console.log(paramsArray);
+              errorLog = 'true';
+              if (paramsArray[0] != '14c')
+                  errorLog+='1';
+              console.log(errorLog);
+              res.end(errorLog);
+      }
+    } else {
+        file.serve(req, res); // (если он есть)
+    }
 }
 
 // ------ этот код запускает веб-сервер -------

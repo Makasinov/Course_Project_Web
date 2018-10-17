@@ -43,6 +43,7 @@
                     inputs[2].style.backgroundColor = 'white';
                     inputs[3].style.backgroundColor = 'white';
                     inputs[4].style.backgroundColor = 'white';
+                    document.getElementById('check1').textContent = 'Проверить';
                 }
                 
                 function check1() {
@@ -53,7 +54,7 @@
                                  '&' + inputs[2].value + 
                                  '&' + inputs[3].value + 
                                  '&' + inputs[4].value;
-                    xhr.open('GET', '/lessons/vote?' + params, true);
+                    xhr.open('GET', '/lessons/request_1?' + params, true);
                     xhr.onreadystatechange = function() {
                         if (xhr.readyState != 4) return;
                         if (xhr.status != 200) {
@@ -61,6 +62,7 @@
                             return;
                         }
                         setDefault();
+                        document.getElementById('check1').textContent = 'Проверить';
                         if (xhr.responseText == 'true')
                             document.getElementById('check1').textContent = 'Верно!';
                         if (xhr.responseText.includes('1',0))
@@ -92,9 +94,35 @@
                    <li>}</li>
                   </code>
                </ol>
-               <a>На экране будет отображено </a>
+               <a>Результат выполения программы </a>
                <input maxlength="3" type="text" class="check"> 
                <button id="check2" onclick="check2()">Проверить</button>
+               <script>
+               function check2() {
+                    var xhr = new XMLHttpRequest();
+                    var inputs = document.getElementsByTagName('input');
+                    var params = inputs[5].value;
+                    xhr.open('GET', '/lessons/request_2?' + params, true);
+                    xhr.onreadystatechange = function() {
+                        if (xhr.readyState != 4) return;
+                        if (xhr.status != 200) {
+                            document.getElementById('check2').textContent = 'Ошибка';
+                            return;
+                        }
+
+                        var inputs = document.getElementsByTagName('input');
+                        inputs[5].style.backgroundColor = 'white';
+
+                        if (xhr.responseText == 'true')
+                            document.getElementById('check2').textContent = 'Верно!';
+                        if (xhr.responseText.includes('1',0)) {
+                            inputs[5].style.backgroundColor = 'red';
+                            document.getElementById('check2').textContent = 'Проверить';
+                        }
+                    }
+                    xhr.send();
+                }
+               </script>
            </div>
        </div>
     </body>

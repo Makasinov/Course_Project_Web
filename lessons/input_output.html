@@ -27,9 +27,38 @@
         <div class="main">
             <h2 class="item noclick">ВВОД - ВЫВОД</h2>
             <a>
-                
+                Как называется стандартная библиотека потока ввода вывода?
+                <img src="https://image.flaticon.com/icons/svg/149/149150.svg" width="15px" height="15px" 
+                title="input output stream"/>
+                <br/>
+                <input maxlength='8' type="text" class="check" style="width: 80px">
+                <button id="check1" onclick="check1()">Проверить</button>
             </a>
        </div>
+       <script>
+           function check1() {
+               var xhr = new XMLHttpRequest();
+               var inputs = document.getElementsByTagName('input');
+               var params = inputs[0].value;
+               xhr.open('GET', '/lessons/input_output_1?' + params, true);
+               xhr.onreadystatechange = function() {
+                   if (xhr.readyState != 4) return;
+                   if (xhr.status != 200) {
+                       document.getElementById('check1').textContent = 'Ошибка';
+                       return;
+                   }
+                   
+               inputs[0].style.backgroundColor = 'white';
+                   
+               document.getElementById('check1').textContent = 'Проверить';
+               if (xhr.responseText == 'true')
+                   document.getElementById('check1').textContent = 'Верно!';
+               if (xhr.responseText.includes('1',0))
+                   inputs[0].style.backgroundColor = 'red';
+               }
+               xhr.send();
+           }
+       </script>
     </body>
     <link rel='stylesheet' href='../css/main.css'>
     <script src='js/main.js'></script>

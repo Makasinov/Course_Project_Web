@@ -112,7 +112,7 @@ function loginButton() {
 }
 
 function close() {
-	//document.getElementById('reg_form').style.display = 'none';
+	
     document.getElementById('list_of_lessons').style.display = 'none';
     document.getElementById('choose_a').style.display = 'none';
 }
