@@ -27,10 +27,64 @@
         <div class="main">
             <h2 class="item noclick">КОНСТРУКЦИИ ВЕТВЛЕНИЯ</h2>
             <a>
-                
+                <div>
+                <ol class="code">
+                    <code>
+                        <li>int main() {</li>
+                        <li>bool b = 1;</li>
+                        <li>   <input maxlength="2" type="text" class="check" style="width: 20px">( b ) {</li>
+                        <li>        cout << "true";</li>
+                        <li>    }<input maxlength="4" type="text" class="check" style="width: 40px">{</li>
+                        <li>        cout << "false";</li>
+                        <li>    }</li>
+                        <li>}</li>
+                    </code>
+                </ol>
+                </div>
+                <a>Результат выполения программы </a>
+                <input maxlength="5" type="text" class="check"> 
+                <button id="check1" onclick="check1()">Проверить</button>
+                <script>
+                    function check1() {
+                        var xhr = new XMLHttpRequest();
+                        var inputs = document.getElementsByTagName('input');
+                        var params = inputs[0].value + '&' + inputs[1].value + '&' + inputs[2].value;
+                        xhr.open('GET', '/lessons/if_else_1?' + params, true);
+                        xhr.onreadystatechange = function() {
+                            if (xhr.readyState != 4) return;
+                            if (xhr.status != 200) {
+                                document.getElementById('check1').textContent = 'Ошибка';
+                                return;
+                            }
+                            
+                            inputs[0].style.backgroundColor = 'white';
+                            inputs[1].style.backgroundColor = 'white';
+                            inputs[2].style.backgroundColor = 'white';
+
+                            if (xhr.responseText == 'true')
+                                document.getElementById('check1').textContent = 'Верно!';
+
+                            if (xhr.responseText.includes('1',0)) {
+                                inputs[0].style.backgroundColor = 'red';
+                                document.getElementById('check1').textContent = 'Проверить';
+                            }
+
+                            if (xhr.responseText.includes('2',0)) {
+                                inputs[1].style.backgroundColor = 'red';
+                                document.getElementById('check1').textContent = 'Проверить';
+                            }
+
+                            if (xhr.responseText.includes('3',0)) {
+                                inputs[2].style.backgroundColor = 'red';
+                                document.getElementById('check1').textContent = 'Проверить';
+                            }
+                        }
+                        xhr.send();
+                    }
+                </script>
             </a>
        </div>
     </body>
     <link rel='stylesheet' href='../css/main.css'>
-    <script src='js/main.js'></script>
+<!--    <script src='../js/main.js'></script>-->
 </html>

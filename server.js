@@ -62,7 +62,42 @@ function accept(req, res) {
     } else {
         file.serve(req, res); // (если он есть)
     }
+
+
+    if (req.url.includes('/lessons/if_else',0)) {
+        if (req.url.includes('/lessons/if_else_1',0))
+        if (req.url.includes('?','/lessons/if_else_1'.length-1)) {
+                paramsArray = 
+                  req.url.substring('/lessons/if_else_1'.length+1,
+                                 req.url.length).split('&');
+                console.log(paramsArray);
+                errorLog = 'true';
+                if (paramsArray[0] != 'if')
+                    errorLog+='1';
+                if (paramsArray[1] != 'else')
+                    errorLog+='2';
+                if (paramsArray[2] != 'true')
+                    errorLog+='3';
+                console.log(errorLog);
+                res.end(errorLog);
+            }
+        } else {
+            file.serve(req, res);
+        }
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
 
 // ------ этот код запускает веб-сервер -------
 
