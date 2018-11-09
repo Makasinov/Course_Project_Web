@@ -101,10 +101,12 @@ function register() {
 }
 
 function listOfLessons() {
-	var list_of_lessons = document.getElementById('list_of_lessons');
-    if(list_of_lessons.style.display == 'none')
-        list_of_lessons.style.display = 'block';
-    else list_of_lessons.style.display = 'none';
+    $( "#list_of_lessons" ).animate({
+        opacity: 0.95,
+        height: "toggle"
+      }, 700, function() {
+        // Animation complete.
+      });
 }
 
 function loginButton() {
